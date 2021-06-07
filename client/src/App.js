@@ -8,7 +8,7 @@ function App() {
   const [isLoading, setLoading] = useState();
   useEffect(() => {
     setLoading(true);
-    getMessage().then((payload) => setMessage(payload.txt));
+    getMessage().then((payload) => setMessage(payload.data));
   }, []);
   useEffect(() => {
     setLoading(false);
