@@ -9,7 +9,7 @@ const reduceTemp = (arr) => {
 };
 
 const extendForecast = (arr) => {
-  const tempArr = reduceTemp(arr).split("-")
-  
-  return reduceTemp(arr);
+  const tempArr = reduceTemp(arr).split("-").slice(0, -1).join(",");
+  // extend forecast logic must be here
+  return tempArr;
 };
