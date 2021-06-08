@@ -1,12 +1,12 @@
 import "./Home.css";
+import { informer } from "../common/constant";
 
-export default function Home({ isLoading, message, Button, Input }) {
-  const msg = "Загрузка данных..";
+export default function Home({ isLoading, data, Button, Input }) {
   return (
     <div className="display-controls">
       <div>{Input}</div>
       <div>{Button}</div>
-      {!isLoading ? <div>{message} </div> : msg}
+      {!isLoading ? <div>{data.forecast} </div> : informer.loading}
     </div>
   );
 }
