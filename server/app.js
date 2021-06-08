@@ -5,8 +5,10 @@ const app = express();
 const PORT = 4000;
 
 db.sync();
+
 app.use(express.json());
-app.use("/api/location", locationRouter);
+app.use("/api/forecast", locationRouter);
+
 app.listen(PORT, () => {
   console.log(`App is runnig http://localhost:${PORT}`);
 });
