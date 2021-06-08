@@ -1,7 +1,7 @@
-export const getMessage = async () => {
-  const res = await fetch("api/location/moscow");
+export const getMessage = async (location) => {
+  const res = await fetch(`api/forecast/${location}`);
   if (res.status === 200) {
     return res.json();
   }
-  return;
+  throw new Error();
 };
