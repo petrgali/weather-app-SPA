@@ -4,3 +4,4 @@ export const informer = {
   loading: "Loading...",
   placeholder: "type location to show",
 };
+export const API_URL = "http://localhost:4000/api/forecast/";
