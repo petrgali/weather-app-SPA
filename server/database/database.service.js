@@ -1,4 +1,4 @@
-import { Forecast } from "./sqlite.js";
+import { Forecast } from './sqlite.js';
 
 export const dbService = {
   read: async (location) => {
@@ -11,9 +11,9 @@ export const dbService = {
   },
   create: async (location, data) => {
     try {
-      await Forecast.create({
-        location: location,
-        data: data,
+      return await Forecast.create({
+        location,
+        data,
       });
     } catch (err) {
       return err.message;
@@ -21,15 +21,15 @@ export const dbService = {
   },
   update: async (location, data) => {
     try {
-      await Forecast.update(
+      return await Forecast.update(
         {
           data,
         },
         {
           where: {
-            location: location,
+            location,
           },
-        }
+        },
       );
     } catch (err) {
       return err.message;

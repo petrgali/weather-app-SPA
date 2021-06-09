@@ -1,15 +1,15 @@
-export { reduceTemp, extendForecast };
-
-const reduceTemp = (arr) => {
-  return arr.reduce((str, obj) => {
+const reduceTemp = (arr) => arr.reduce((str, obj) => {
+  // eslint-disable-next-line
     str += Math.ceil(obj.main.temp);
+  // eslint-disable-next-line
     str += "-";
-    return str;
-  }, "");
-};
+  return str;
+}, '');
 
 const extendForecast = (arr) => {
-  const tempArr = reduceTemp(arr).split("-").slice(0, -1).join(",");
+  const tempArr = reduceTemp(arr).split('-').slice(0, -1).join(',');
   // extend forecast logic must be here
   return tempArr;
 };
+
+export { reduceTemp, extendForecast };

@@ -5,7 +5,7 @@
   "main": "server/server.js",
   "scripts": {
     "start": "nodemon server/app.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint": "eslint --ext .js --fix server/ client/"
   },
   "type": "module",
   "keywords": [],
@@ -17,6 +17,8 @@
     "sqlite3": "^5.0.2"
   },
   "devDependencies": {
+    "eslint": "^7.28.0",
+    "eslint-config-airbnb-base": "^14.2.1",
     "nodemon": "^2.0.7"
   }
 }

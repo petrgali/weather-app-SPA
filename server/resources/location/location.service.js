@@ -1,15 +1,15 @@
-import axios from "axios";
-import { dbService } from "../../database/database.service.js";
-import { WEATHER_API } from "../../common/config.js";
-import { extendForecast } from "../../services/extend.js";
-import { config } from "dotenv";
+import axios from 'axios';
+import { config } from 'dotenv';
+import { dbService } from '../../database/database.service.js';
+import { WEATHER_API } from '../../common/config.js';
+import { extendForecast } from '../../services/extend.js';
 
 config();
 export const weather = {
   getRawData: async (location) => {
     try {
       const response = await axios.get(
-        `${WEATHER_API}${location}&appid=${process.env.API_KEY}&units=metric`
+        `${WEATHER_API}${location}&appid=${process.env.API_KEY}&units=metric`,
       );
       return { data: response.data };
     } catch (err) {
